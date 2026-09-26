@@ -1,0 +1,293 @@
+:root {
+  --sky: #13bde3;
+  --sky-dark: #087cae;
+  --turquoise: #00d7c9;
+  --gold: #ffc928;
+  --orange: #ff7a16;
+  --cream: #fff7dc;
+  --dark: #101d24;
+  --glass: rgba(8, 29, 39, .72);
+  --border: rgba(255, 255, 255, .22);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, system-ui, sans-serif;
+  color: white;
+  background: #079bc6;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 128, 184, .20), rgba(0, 38, 51, .62)),
+    url("background.png") center center / cover no-repeat;
+  transform: scale(1.015);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 218, 62, .10), transparent 30%),
+    linear-gradient(180deg, rgba(4, 28, 37, .05), rgba(4, 20, 28, .62));
+  pointer-events: none;
+}
+
+.nav {
+  position: relative;
+  z-index: 3;
+  width: min(1180px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 26px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+
+.brand-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  background: var(--turquoise);
+  box-shadow: 0 0 18px rgba(0,215,201,.8);
+}
+
+.discord-small {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 17px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(8, 29, 39, .38);
+  backdrop-filter: blur(10px);
+  transition: .2s ease;
+}
+
+.discord-small:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 215, 201, .28);
+  border-color: rgba(0, 215, 201, .7);
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+  padding: 30px 18px 80px;
+}
+
+.hero-content {
+  width: min(850px, 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(7, 33, 42, .55);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  color: #d8ffff;
+  margin-bottom: 17px;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(42px, 9vw, 94px);
+  line-height: .98;
+  letter-spacing: -4px;
+  color: #f9fbff;
+  text-shadow:
+    0 7px 0 #27323a,
+    0 12px 24px rgba(0,0,0,.52);
+}
+
+h1 span {
+  display: block;
+  margin-top: 14px;
+  color: var(--gold);
+  text-shadow:
+    0 7px 0 #a9410b,
+    0 12px 24px rgba(0,0,0,.55);
+}
+
+.subtitle {
+  margin: 27px 0 24px;
+  font-size: 18px;
+  color: #f5ffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,.65);
+}
+
+.server-card {
+  width: min(620px, 100%);
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 55px rgba(0,0,0,.25);
+}
+
+.card-label {
+  text-align: left;
+  color: #aefcf7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 9px 3px;
+}
+
+.ip-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+code {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 800;
+  color: white;
+  padding: 14px;
+  border-radius: 11px;
+  background: rgba(0,0,0,.30);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.copy-btn {
+  border: 0;
+  border-radius: 11px;
+  padding: 14px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #102028;
+  background: var(--gold);
+  box-shadow: 0 5px 0 #b76b0b;
+  transition: .15s ease;
+}
+
+.copy-btn:hover { filter: brightness(1.08); }
+.copy-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #b76b0b;
+}
+
+.copy-message {
+  margin-top: 9px;
+  font-size: 12px;
+  color: rgba(255,255,255,.72);
+}
+
+.discord-note {
+  margin: 24px 0 17px;
+  line-height: 1.65;
+  color: #f4ffff;
+  text-shadow: 0 2px 7px rgba(0,0,0,.65);
+}
+
+.discord-note strong {
+  color: #9ffff7;
+}
+
+.discord-button {
+  width: min(620px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 58px;
+  padding: 16px 22px;
+  border-radius: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .7px;
+  background: linear-gradient(135deg, #10cfc4, #087fbb);
+  border: 1px solid rgba(255,255,255,.32);
+  box-shadow: 0 12px 30px rgba(0,0,0,.30), 0 0 25px rgba(0,215,201,.18);
+  transition: .2s ease;
+}
+
+.discord-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.34), 0 0 35px rgba(0,215,201,.3);
+}
+
+.discord-icon {
+  font-size: 23px;
+}
+
+.arrow {
+  font-size: 22px;
+  margin-left: auto;
+}
+
+.scroll-hint {
+  margin-top: 34px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.62);
+}
+
+footer {
+  position: fixed;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255,255,255,.65);
+  font-size: 11px;
+  background: linear-gradient(transparent, rgba(0,0,0,.35));
+}
+
+@media (max-width: 600px) {
+  .nav { padding-top: 17px; }
+  .discord-small { display: none; }
+  .hero { padding-top: 10px; }
+  .ip-row { flex-direction: column; }
+  code, .copy-btn { width: 100%; }
+  .copy-btn { min-height: 48px; }
+  footer { font-size: 9px; padding: 10px 14px; }
+}
